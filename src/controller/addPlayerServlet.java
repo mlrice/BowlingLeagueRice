@@ -7,38 +7,37 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Team;
+import model.Player;
 
 /**
- * Servlet implementation class addTeam
+ * Servlet implementation class addPlayerServlet
  */
-@WebServlet("/addTeamServlet")
-public class addTeamServlet extends HttpServlet {
+@WebServlet("/addPlayerServlet")
+public class addPlayerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public addTeamServlet() {
+    public addPlayerServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
-
-	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String teamName = request.getParameter("teamName");
-		String teamType = request.getParameter("teamType");
-		String preferredNight = request.getParameter("preferredNight");
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+		String phoneNumber = request.getParameter("phoneNumber");
+		String screenName = request.getParameter("screenName");
+		int teamId = Integer.parseInt(request.getParameter("teamId"));
 		
-		
-		Team nt = new Team(teamName, teamType, preferredNight);
-		TeamHelper th = new TeamHelper();
-		th.addTeam(nt);
+		Player np = new Player(firstName, lastName, phoneNumber, screenName, teamId);
+		PlayerHelper ph = new PlayerHelper();
+		ph.addPlayer(np);
 		
 		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
 	}

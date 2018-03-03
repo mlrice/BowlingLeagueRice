@@ -15,7 +15,7 @@ import model.Team;
 /**
  * Servlet implementation class editBowlingLeagueServlet
  */
-@WebServlet("/editBowlingLeagueServlet")
+@WebServlet("/editTeamServlet")
 public class editTeamServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -45,15 +45,15 @@ public class editTeamServlet extends HttpServlet {
 		TeamHelper dao = new TeamHelper();
 		if (act == null) {
 			//no button has been selected
-			getServletContext().getRequestDispatcher("/editTeamServlet").forward(request, response);
-		} else if (act.equals("Delete team")) {
+			getServletContext().getRequestDispatcher("/viewAllTeamsServlet").forward(request, response);
+		} else if (act.equals("Delete Selected Team")) {
 			Integer tempId = Integer.parseInt(request.getParameter("id"));
 			Team itemToDelete = dao.searchForItemById(tempId);
 			dao.deleteItem(itemToDelete);
 
-			getServletContext().getRequestDispatcher("/editTeamServlet").forward(request, response);
+			getServletContext().getRequestDispatcher("/ViewAllTeamsServlet").forward(request, response);
 		} 
-		else if (act.equals("Add a new team")) {
+		else if (act.equals("Add New Team")) {
 			getServletContext().getRequestDispatcher("/addTeam.html").forward(request, response);
 		}
 	}
