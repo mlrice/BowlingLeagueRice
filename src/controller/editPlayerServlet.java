@@ -52,6 +52,9 @@ public class editPlayerServlet extends HttpServlet {
 		else if (act.equals("Add New Player")) {
 			getServletContext().getRequestDispatcher("/addPlayer.html").forward(request, response);
 		}
+		else if (act.equals("Back To Menu")) {
+			getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+		}
 	}
 
 }

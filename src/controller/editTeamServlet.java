@@ -56,6 +56,9 @@ public class editTeamServlet extends HttpServlet {
 		else if (act.equals("Add New Team")) {
 			getServletContext().getRequestDispatcher("/addTeam.html").forward(request, response);
 		}
+		else if (act.equals("Back To Menu")) {
+			getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+	}
 	}
 
 }

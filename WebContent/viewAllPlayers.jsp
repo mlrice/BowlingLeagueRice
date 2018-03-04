@@ -23,6 +23,7 @@
 </table>
 <input type="submit" value="Delete Selected Player" name="doThisToItem">
 <input type="submit" value="Add New Player" name="doThisToItem">
+<input type="submit" value="Back To Menu" name="doThisToItem">
 	</form>
 </body>
 </html>
