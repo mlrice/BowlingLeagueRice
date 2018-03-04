@@ -43,12 +43,13 @@ public class Player {
 		this.teamId = teamId;
 	}
 
-	public Player(String firstName, String lastName, String phoneNumber, String screenName) {
+	public Player(String firstName, String lastName, String phoneNumber, String screenName, int teamId) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNumber = phoneNumber;
 		this.screenName = screenName;
+		this.teamId = teamId;
 	}
 
 	public int getPlayerId() {

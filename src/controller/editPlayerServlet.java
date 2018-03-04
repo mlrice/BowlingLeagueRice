@@ -42,16 +42,15 @@ public class editPlayerServlet extends HttpServlet {
 		PlayerHelper dao = new PlayerHelper();
 		if (act == null) {
 			//no button has been selected
-			getServletContext().getRequestDispatcher("/editTeamServlet").forward(request, response);
-		} else if (act.equals("Delete team")) {
+			getServletContext().getRequestDispatcher("/ViewAllPlayersServlet").forward(request, response);
+		} else if (act.equals("Delete Selected Player")) {
 			Integer tempId = Integer.parseInt(request.getParameter("id"));
 			Player itemToDelete = dao.searchForItemById(tempId);
 			dao.deleteItem(itemToDelete);
-
-			getServletContext().getRequestDispatcher("/editTeamServlet").forward(request, response);
+			getServletContext().getRequestDispatcher("/ViewAllPlayersServlet").forward(request, response);
 		} 
-		else if (act.equals("Add a new team")) {
-			getServletContext().getRequestDispatcher("/addTeam.html").forward(request, response);
+		else if (act.equals("Add New Player")) {
+			getServletContext().getRequestDispatcher("/addPlayer.html").forward(request, response);
 		}
 	}
 

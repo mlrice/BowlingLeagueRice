@@ -29,7 +29,7 @@ public class Team {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="teamdD")
+	@Column(name="teamId")
 	public int teamId;
 	@Column(name="teamName")
 	public String teamName;
